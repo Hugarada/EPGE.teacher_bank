@@ -1,33 +1,29 @@
 package com.aula.main;
 
-import com.aula.main.Funcionario;
-
-import java.util.Random;
-import java.util.random;
+import java.util.Arrays;
 
 public class Professor extends Funcionario
 {
     private String cargo;
 
-    public Professor(String nome, int telefone, String morada, String CC, boolean vacinado, int numeroFuncionario, int salario, boolean ativo, String cargo)
-    {
+    public Professor(String nome, int telefone, String morada, String CC, 
+        boolean vacinado, int numeroFuncionario, int salario, boolean ativo, String cargo) {
         super(nome, telefone, morada, CC, vacinado, numeroFuncionario, salario, ativo);
+
         this.setCargo(cargo);
     }
 
-    public void setCargo(String cargo)
-    {
+    public void setCargo(String cargo){
         this.cargo = cargo;
     }
 
-    public String getCargo()
-    {
+    public String getCargo(){
         return this.cargo;
     }
 
-    public void elegerDelegado(Turma turma, int[] numsAlunos)
-    {
+    public void elegerDelegado(Turma turma, int[] numsAlunos) {
         int aluno = mostFrequent(numsAlunos, numsAlunos.length);
+        System.out.println(aluno);
         turma.setDelegado(aluno);
     }
 
@@ -67,4 +63,5 @@ public class Professor extends Funcionario
 
         return res;
     }
+
 }

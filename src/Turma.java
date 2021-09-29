@@ -2,56 +2,68 @@ package com.aula.main;
 
 import java.util.ArrayList;
 
-public class Turma
-{
-    private int num;
+public class Turma{
+
+    private int numeroTurma;
+    public String curso;
+    public int ano;
     private ArrayList<Aluno> alunos;
-    private Aluno delegado, subDelegado;
+    private Aluno delegado;
+    private Aluno subDelegado;
 
-    public Turma(int num, ArrayList alunos)
-    {
-        super(numeroAluno, turma, ano, curso);
-        this.setNum(num);
-        this.alunos = new ArrayList<Alunos>();
+
+    public Turma(int numeroTurma, String curso, int ano){
+        this.setNumeroTurma(numeroTurma);
+        this.setCurso(curso);
+        this.setAno(ano);
+        this.alunos = new ArrayList<Aluno>();
     }
 
-    public void setNum(int num)
-    {
-        this.num = num;
-    }
-
-    public int getNum()
-    {
-        return this.num;
-    }
-
-    public void addAlunos(String alunos)
-    {
-        this.alunos.add(alunos);
-    }
-
-    public ArrayList<Alunos> getAlunos()
-    {
+    public ArrayList<Aluno> getAlunos(){
         return this.alunos;
     }
 
-    public void setDelegado(Aluno aluno)
-    {
-        this.delegado = aluno;
+    public void setAno(int ano){
+        this.ano = ano;
     }
 
-    public Aluno getDelegado()
-    {
+    public void setCurso(String curso){
+        this.curso = curso;
+    }
+
+    public String getCurso(){
+        return this.curso;
+    }
+
+    public void setNumeroTurma(int numeroTurma){
+        this.numeroTurma = numeroTurma;
+    }
+
+    public int getNumeroTurma(){
+        return this.numeroTurma;
+    }
+
+    public void addAluno(Aluno novoAluno){
+        this.alunos.add(novoAluno);
+    }
+
+    public void setDelegado(int numAluno){
+
+        for (Aluno aluno : this.getAlunos()) {
+            if (aluno.getNumeroAluno() == numAluno){
+                this.delegado = aluno;
+            }
+        }
+
+    }
+
+    public Aluno getDelegado(){
         return this.delegado;
     }
 
-    public void setSubDelegado(Aluno aluno)
-    {
-        this.subDelegado = aluno;
-    }
-
-    public Aluno getSubDelegado()
-    {
+    public Aluno getSubDelegado(){
         return this.subDelegado;
     }
+
+
 }

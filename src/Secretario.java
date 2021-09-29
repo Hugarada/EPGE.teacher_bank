@@ -27,10 +27,11 @@ public class Secretario extends Funcionario
         return novaTurma;
     }
 
-    //recebe objeto turma, e argumentos necessarios para criar objeto aluno, depois adiciona o novo aluno à turma
     public void adicionarAluno(Turma turmaObj, String nome, int telefone, String morada, String CC, boolean vacinado, 
     int numeroAluno, int turma, int ano, String Curso){
         Aluno novoAluno = new Aluno(nome, telefone, morada, CC, vacinado, numeroAluno, turma, ano, Curso);
         turmaObj.addAluno(novoAluno);
     }
+
+
 }
